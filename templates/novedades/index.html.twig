@@ -1,0 +1,42 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Noticias{% endblock %}
+
+{% block body %}
+    <div class="container" style="background: navajowhite;border: 0;">
+
+    <h1>Novedades</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Noticias</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for novedade in novedades %}
+            <tr>
+                <td>{{ novedade.id }}</td>
+                <td>{{ novedade.noticias }}</td>
+                <td>
+                    <a href="{{ path('app_novedades_show', {'id': novedade.id}) }}">Mostrar</a>
+                    {% if is_granted('ROLE_ADMIN') %}
+                    	<a href="{{ path('app_novedades_edit', {'id': novedade.id}) }}">Modifcar</a>
+                    {% endif %}
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">No  Hay novedades</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+	 {% if is_granted('ROLE_ADMIN') %}
+   		 <a class="btn btn-info w-25" href="{{ path('app_novedades_new') }}">Crear nueva</a>
+     {% endif %}
+     
+</div>
+{% endblock %}

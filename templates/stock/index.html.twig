@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Stock {% endblock %}
+
+{% block body %}
+    <div class="container" style="background: navajowhite;border: 0;margin-left: 10px;">
+    <h1>Stock </h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Cantidad</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for stock in stocks %}
+            <tr>
+                <td>{{ stock.id }}</td>
+                <td>{{ stock.producto.name }}</td>
+                <td>{{ stock.cantidad }}</td>
+                <td>
+                    <a href="{{ path('app_stock_show', {'id': stock.id}) }}">Mostrar</a>
+                    <a href="{{ path('app_stock_edit', {'id': stock.id}) }}">Modificar</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="2">No hay registros</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+    <a class="btn btn-info w-25" href="{{ path('app_stock_new') }}"> Añadir</a>
+</div>
+{% endblock %}

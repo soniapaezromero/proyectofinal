@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Role{% endblock %}
+
+{% block body %}
+<div class="container" style="background: navajowhite;border: 0;">
+    <h1>Edit Role</h1>
+
+    {{ include('role/_form.html.twig', {'button_label': 'Update'}) }}
+    <p>
+    <p>
+    <a href="{{ path('role_index') }}">back to list</a>
+    <p>
+    {{ include('role/_delete_form.html.twig') }}
+</div>
+{% endblock %}

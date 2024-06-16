@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="da93d57f-b817-4f60-ab1f-5632ef24167c" name="srvidor last">
+        <fileTransfer rootFolder="/var/www/soniapaezromeroproyectofinal.online/html" accessType="SFTP" host="164.92.160.243" port="22" sshConfigId="ce4ca301-76ff-4ece-a9fc-5e8a3022ba9b" sshConfig="root@164.92.160.243:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+      <webServer id="e3f1e504-1f63-4ac5-bdbd-7a42f21a6511" name="apache">
+        <fileTransfer rootFolder="/var/www/soniapaezromeroproyectofinal.online" accessType="SFTP" host="164.92.160.243" port="22" sshConfigId="ce4ca301-76ff-4ece-a9fc-5e8a3022ba9b" sshConfig="root@164.92.160.243:22 key" keyPair="true">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

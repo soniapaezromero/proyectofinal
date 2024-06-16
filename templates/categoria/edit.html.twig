@@ -1,0 +1,16 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Categoria index{% endblock %}
+
+{% block body %}
+    <div class="container" style="background: navajowhite;border: 0;">
+    <h1>Edit Categoria</h1>
+
+    {{ include('categoria/_form.html.twig', {'button_label': 'Update'}) }}
+  	<p>
+    <p>
+    <a class="btn btn-info w-25"  href="{{ path('app_categoria_index') }}">back to list</a>
+    <p>
+    {{ include('categoria/_delete_form.html.twig') }}
+    </div>
+{% endblock %}

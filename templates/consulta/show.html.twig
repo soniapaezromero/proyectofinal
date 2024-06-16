@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Consulta{% endblock %}
+
+{% block body %}
+    <div class="container" style="background: navajowhite;border: 0;">
+    <h1>Consulta</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ consultum.id }}</td>
+            </tr>
+            <tr>
+                <th>Consulta</th>
+                <td>{{ consultum.Consulta }}</td>
+            </tr>
+        </tbody>
+    </table>
+   </div>
+    <a class="btn btn-info w-25" href="{{ path('app_consulta_index') }}">back to list</a>
+    <p>
+    <a class="btn btn-info w-25" href="{{ path('app_consulta_edit', {'id': consultum.id}) }}">edit</a>
+
+    {{ include('consulta/_delete_form.html.twig') }}
+{% endblock %}

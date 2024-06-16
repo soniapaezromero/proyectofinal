@@ -1,0 +1,15 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Noticias{% endblock %}
+
+{% block body %}
+    <div class="container" style="background: navajowhite;border: 0;">
+
+    <h1>Create new Novedades</h1>
+
+    {{ include('novedades/_form.html.twig') }}
+  	<p>
+    <p>
+    <a  class="btn btn-info w-25" href="{{ path('app_novedades_index') }}">back to list</a>
+</div>
+{% endblock %}

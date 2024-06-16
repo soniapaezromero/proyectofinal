@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block title %} Consulta{% endblock %}
+
+{% block body %}
+    <div class="container" style="background: navajowhite;border: 0;">
+    <h1>Edit Consulta</h1>
+        <label for="email">Email del usuario</label>
+        <p></p>
+        <input type="email" id="email"
+               value="{{ consultum.email }}"style="width: 1100px; border-radius: 5px;border-color:lightgrey " required>
+
+    {{ include('consulta/_form.html.twig', {'button_label': 'Update'}) }}
+	<p>
+    <p>
+    <a class="btn btn-info w-25"  href="{{ path('app_consulta_index') }}">back to list</a>
+	<p>
+    {{ include('consulta/_delete_form.html.twig') }}
+    </div>
+{% endblock %}

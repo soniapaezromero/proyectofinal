@@ -1,0 +1,50 @@
+{% extends 'base.html.twig' %}
+{% block title %}Producto por categorias{% endblock %}
+{% block body %}
+
+    <div class="container" style="background: navajowhite;border: 0;margin-left: 10px;margin-top: 10px;">
+    <p></p>
+        <p></p>
+        <p></p>
+        <p></p>
+        <h1>{{ name }}</h1>
+        <table class="table" style="margin-right: 50px;width: 1100px;">
+            <thead>
+            <tr >
+                <th style="width: 5%;">Id</th>
+                <th>Nombre</th>
+                <th>Cantidad</th>
+                <th>Imagen</th>
+                <th>Precio</th>
+                <th>Acciones</th>
+            </tr>
+            </thead>
+            <tbody>
+            {% for producto in productos %}
+                <tr>
+                    <td class="table-info">{{ producto.id }}</td>
+                    <td>{{ producto.name }}</td>
+                    <td>{{ producto.stock }}</td>
+                    <td><img src="{{ asset('images/products/') }}{{ producto.imageName }}"  height="50"></td>
+                    <td>{{ producto.precio |number_format(2, ',', '.')}}€ </td>
+
+                    <td>
+                        <a href="{{ path('app_producto_show', {'id': producto.id}) }}">Mostrar</a>
+                        {% if is_granted('ROLE_ADMIN') %}
+                        <a href="{{ path('app_producto_edit', {'id': producto.id}) }}">Editar</a>
+                        {% endif %}
+                        <a href="{{ path('app_producto_detail', {'id': producto.id}) }}">Añadir al carrito</a>
+                    </td>
+                </tr>
+            {% else %}
+                <tr>
+                    <td colspan="3">no records found</td>
+                </tr>
+            {% endfor %}
+            </tbody>
+        </table>
+        <a href="{{ path('app_producto_index') }}" class="btn btn-info w-25">back to list</a>
+    </div>
+
+{% endblock %}
+
