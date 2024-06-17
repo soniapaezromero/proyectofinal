@@ -34,3 +34,14 @@ Requisitos previos:
     • composer update
 		
     • composer require symfony/apache-pack
+
+     Instalar Nodes.js en el proyecto para que ea adapte a tu configuración:
+     
+    •  npm install -g yarn
+    
+    •  yarn install
+    
+    •  yarn build
+    
+    •  yarn cache clean 
+      
